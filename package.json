@@ -1,0 +1,48 @@
+{
+  "name": "Luxic",
+  "version": "1.0.0",
+  "description": "Early Development Stage",
+  "main": "assets/scripts/createwindow.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": "https://github.com/LuxicApp/ElectronApp",
+  "author": "Luxic",
+  "license": "MIT",
+  "dependencies": {
+    "@discordjs/uws": "^10.149.0",
+    "ajv": "^6.12.5",
+    "discord-rpc": "^3.1.4",
+    "discord.js": "^11.0.0",
+    "electron-config": "^2.0.0",
+    "electron-updater": "^4.3.5",
+    "jquery": "^3.5.1",
+    "jsdom": "^9.12.0",
+    "mysql": "^2.18.1",
+    "node-notifier": "^7.0.1",
+    "systeminformation": "^4.26.5",
+    "uws": "^100.0.1"
+  },
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "electron-builder": "^22.8.1"
+  },
+  "_note": "Development Build",
+  "build": {
+    "appId": "luxic.app",
+    "extends": null,
+    "files": [ "./release/**/*", "./assets/scripts/createwindow.js" ],
+    "win": {
+      "target": "NSIS",
+      "icon": "assets/build/appicon.ico"
+    },
+    "mac": {
+      "category": "luxic.app"
+    },
+    "directories": {
+        "output": "release/"
+    }
+  }
+}

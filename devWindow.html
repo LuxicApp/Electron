@@ -1,0 +1,63 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/mainWindow.css">
+</head>
+<body>
+    <div id="appWindow">
+        <div id="appWindowFrame">
+            <div id="appTopbar">
+                <div class="appTopbar__grabArea" style="width: 100%; height: 2px;"></div>
+                <div class="appTopbar__grabArea" style="height: 70px; width: 2px; left: 0;"></div>
+                <div class="appTopbar__grabArea" style="height: 70px; width: 2px; right: 0;"></div>
+                <div id="appTopbar__logoDev">
+                    <img src="assets/cdn/icons/logo.svg">
+                </div>
+                <div id="appTopbar__navigation">
+                    <p href="" id="appTopbar__activePage">Developer Mode</p>
+                </div>
+                <div id="appTopbar__windowControls">
+                    <div id="appTopbar__windowMinimize" class="appTopbar__controlItem">
+                        <svg width="12" height="12" viewBox="0 0 12 12">
+                            <rect fill="#89898D" width="10" height="1" x="1" y="6"></rect>
+                        </svg>
+                    </div>
+                    <div id="appTopbar__windowMaximize" class="appTopbar__controlItem">
+                        <svg width="12" height="12" viewBox="0 0 12 12">
+                            <rect stroke="#89898D" width="9" height="9" x="1.5" y="1.5" fill="none"></rect>
+                        </svg>
+                    </div>
+                    <div id="appTopbar__windowClose" class="appTopbar__controlItem appTopbar__windowCloseItem">
+                        <svg width="12" height="12" viewBox="0 0 12 12">
+                            <polygon fill="#89898D" fill-rule="evenodd"
+                                points="11 1.576 6.583 6 11 10.424 10.424 11 6 6.583 1.576 11 1 10.424 5.417 6 1 1.576 1.576 1 6 5.417 10.424 1">
+                            </polygon>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div id="appMainWindow">
+                <div id="appSidebar">
+                    <div id="appSidebar__icons">
+                        <a href="assets/frames/" target="appContentWindowFrame">
+                            <div class="appSidebar__item">
+                                <svg aria-hidden="false" width="30" height="30" viewBox="0 0 24 24"><path fill="#F6F4EF" fill-rule="evenodd" clip-rule="evenodd" d="M19.738 10H22V14H19.739C19.498 14.931 19.1 15.798 18.565 16.564L20 18L18 20L16.565 18.564C15.797 19.099 14.932 19.498 14 19.738V22H10V19.738C9.069 19.498 8.203 19.099 7.436 18.564L6 20L4 18L5.436 16.564C4.901 15.799 4.502 14.932 4.262 14H2V10H4.262C4.502 9.068 4.9 8.202 5.436 7.436L4 6L6 4L7.436 5.436C8.202 4.9 9.068 4.502 10 4.262V2H14V4.261C14.932 4.502 15.797 4.9 16.565 5.435L18 3.999L20 5.999L18.564 7.436C19.099 8.202 19.498 9.069 19.738 10ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"></path></svg>
+                                <div class="appSidebar__tooltip">Settings</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="appContentWindow">
+                    <iframe src="" name="appContentWindowFrame" allowTransparency="true" scrolling="no" frameborder="0" ></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- High Priority Scripts -->
+    <script src="assets/scripts/windowcontrols.js"></script>
+    <script src="assets/scripts/notification.js"></script>
+    <!-- Other -->
+</body>
+
+</html>

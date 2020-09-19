@@ -1,0 +1,499 @@
+html, body {
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+#appWindow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#appWindowFrame {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#appSidebar {
+    width: 80px;
+    height: 100%;
+    background-color: #131519;
+}
+
+#appSidebar__icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.appSidebar__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 70px;
+    border-left: 3px solid transparent;
+}
+
+.appSidebar__item:hover {
+    cursor: pointer;
+    border-left: 3px solid #00A5E4;
+}
+
+.appSidebar__item .appSidebar__tooltip {
+    position: absolute;
+    visibility: hidden;
+    padding: 5px 8px;
+    left: 125px;
+    margin-left: -60px;
+    width: max-content;
+    border-radius: 6px;
+    background-color: #3E3E46;
+    color: #F6F4EF;
+    transition: opacity 0.3s;
+    font-family: 'Roboto500', sans-serif;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .appSidebar__item:hover .appSidebar__tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+#appMainWindow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+#appTopbar {
+    -webkit-app-region: drag;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    background-color: #131519;
+}
+
+.appTopbar__grabArea {
+    -webkit-app-region: no-drag;
+    position: absolute;
+}
+
+#appTopbar__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+    background-color: #B30EE6;
+}
+
+#appTopbar__logoDev {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 100%;
+    background-color: orange;
+}
+
+#appTopbar__logo img {
+    width: 50px;
+}
+
+#appTopbar__logoDev img {
+    width: 50px;
+}
+
+#appTopbar__navigation {
+    margin: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #89898D;
+    font-weight: 500;
+}
+
+#appTopbar__navigation a {
+    -webkit-app-region: no-drag;
+    padding: 0 15px;
+}
+
+#appTopbar__navigation a:hover {
+    color: #3e3e40;
+}
+
+#appTopbar__activePage {
+    color: #F6F4EF;
+}
+
+#appTopbar__activePage:hover {
+    color: #F6F4EF !important;
+}
+
+#appTopbar__search {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    min-width: 300px;
+    max-width: 700px;
+}
+
+#appTopbar_searchContainer {
+    -webkit-app-region: no-drag;
+    display: flex;
+    justify-content: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    height: 35px;
+    width: 100%;
+    background-color: #171A1F;
+}
+
+#appTopbar_searchContainer img {
+    margin: 0 10px 0 12px;
+}
+
+#appTopbar_searchBox {
+    padding: 0 8px 0 0;
+    background-color: transparent;
+    border: none;
+    font-family: 'Roboto500', sans-serif;
+    font-size: 15px;
+    color: #F6F4EF;
+    width: 100%;
+}
+
+#appTopbar__extentionBar {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+    height: 100%;
+    overflow: hidden;
+}
+
+.appTopbar_extention {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 70px;
+}
+
+#appTopbar__account {
+    margin-right: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: max-content;
+}
+
+#appTopbar__accountName {
+    -webkit-app-region: no-drag;
+    padding: 0 15px 3px 15px;
+    font-size: 15px;
+    color: #F6F4EF;
+    font-weight: 500;
+}
+
+#appTopbar__accountStats {
+    padding: 0 15px;
+    -webkit-app-region: no-drag;
+    display: flex;
+    align-items: center;
+}
+
+#appTopbar__accountLevel {
+    margin-right: 5px;
+    font-size: 12px;
+    color: #00A5E4;
+    font-weight: 500;
+}
+
+.appTopbar__accountBadgeItem {
+    margin: 0 3px;
+    width: 12px;
+}
+
+.appTopbar__accountBadgeContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.appTopbar__accountBadgeContent img {
+    height: 100%;
+    margin-right: 10px;
+}
+
+.appTopbar__accountBadgeContent div {
+    height: 100%;
+}
+
+.appTopbar__accountBadgeName {
+    padding-bottom: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #F6F4EF;
+}
+
+.appTopbar__accountBadgeDesc {
+    height: max-content;
+    padding: 0 0 5px 0;
+    font-size: 12px;
+    font-weight: 400;
+    color: #89898D;
+}
+
+.appTopbar__accountBadge {
+    position: relative;
+    cursor: pointer;
+}
+
+.appTopbar__accountBadge:hover {
+    cursor: pointer;
+}
+
+.appTopbar__accountBadge .appTopbar__accountBadgeTooltip {
+    position: absolute;
+    visibility: hidden;
+    padding: 10px;
+    left: 80px;
+    top: 0;
+    margin-left: -60px;
+    width: max-content;
+    max-width: 200px;
+    border-radius: 6px;
+    background-color: #3E3E46;
+    transition: opacity 0.3s;
+    font-family: 'Roboto400', sans-serif;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+.appTopbar__accountBadge:hover .appTopbar__accountBadgeTooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#appContentWindow {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#appContentWindow iframe {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 5020px;
+}
+
+#appContentWindow::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+#appContentWindow::-webkit-scrollbar {
+	width: 12px;
+}
+
+#appContentWindow::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #26292F;
+}
+
+#musicbar {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 85px;
+    width: 100%;
+    background-color: #131519;
+}
+
+.musicbar__visable {
+    position: fixed;
+    bottom: 0;
+}
+
+.musicbar__hidden {
+    display: none !important;
+}
+
+#musicbar__durationcontainer {
+    margin: 0;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 5px;
+    background-color: #F6F4EF;
+    outline: none;
+    transition: opacity .2s;
+    z-index: 2;
+}
+
+#musicbar__durationcontainer::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #00A5E4;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.musicbar {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#musicbar__currentlyPlaying {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#musicbar__albumCover {
+    width: 80px;
+    height: 80px;
+    user-select: none;
+}
+
+#musicbar__albumCover img {
+    width: 80px;
+    height: 80px;
+}
+
+#musicbar__songDetails {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+
+#musicbar__songName {
+    margin-bottom: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #F6F4EF;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+
+#musicbar__songArtist {
+    font-size: 12px;
+    color: #89898D;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+
+#musicbar__controls {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#musicbar__controls img {
+    margin: 0 13px;
+    width: 30px;
+}
+
+#musicbar__play {
+    cursor: pointer;
+    width: 40px !important;
+}
+
+.musicbar__padding {
+    padding: 8px;
+}
+
+.musicbar__padding:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #89898D;
+}
+
+#musicbar__volumeControl {
+    padding-right: 20px;
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#musicbar__volumeStatus {
+    margin-right: 8px;
+    width: 20px;
+}
+
+#musicbar__volumeSlider {
+    -webkit-appearance: none;
+    height: 5px;
+    background-color: #F6F4EF;
+    outline: none;
+    transition: opacity .2s;
+    z-index: 2;
+}
+  
+#musicbar__volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background-color: #00A5E4;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+
+#appTopbar__windowControls {
+    -webkit-app-region: no-drag;
+    display: flex;
+    margin-left: auto;
+    height: 25px;
+}
+
+.appTopbar__controlItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.appTopbar__controlItem:hover {
+    background-color: #3E3E40;
+}
+
+.appTopbar__controlItem:active {
+    background-color: #252526;
+}
+
+.appTopbar__windowCloseItem:hover {
+    background-color: #F04747;
+}
