@@ -23,24 +23,24 @@ function createWindow() {
 
     console.log('[Electron] Main Window Loaded');
 
-    var devWindow = new BrowserWindow({
-        title: 'Development Environment',
-        width: 1170,
-        height: 650,
-        minWidth: 1170,
-        minHeight: 650,
-        icon: 'assets/build/DEVappicon.ico',
-        backgroundColor: '#171A1F',
-        frame: false,
-        webPreferences: {
-            nodeIntegration: true,
-            enableRemoteModule: true
-        }
-    });
+    // var devWindow = new BrowserWindow({
+    //     title: 'Development Environment',
+    //     width: 1170,
+    //     height: 650,
+    //     minWidth: 1170,
+    //     minHeight: 650,
+    //     icon: 'assets/build/DEVappicon.ico',
+    //     backgroundColor: '#171A1F',
+    //     frame: false,
+    //     webPreferences: {
+    //         nodeIntegration: true,
+    //         enableRemoteModule: true
+    //     }
+    // });
 
-    devWindow.loadURL(`file://${path.join(__dirname, '../../devWindow.html')}`);
+    // devWindow.loadURL(`file://${path.join(__dirname, '../../devWindow.html')}`);
 
-    console.log('[Electron] Development Environment Enabled');
+    // console.log('[Electron] Development Environment Enabled');
     // devWindow.webContents.openDevTools();
 }
 

@@ -10,6 +10,20 @@ html, body {
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+	width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: #26292F;
+}
+
 @font-face {
     font-family: Roboto100;
     src: url('../fonts/Roboto-Thin.ttf');
