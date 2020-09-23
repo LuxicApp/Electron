@@ -14,14 +14,17 @@ function createWindow() {
         frame: false,
         webPreferences: {
             nodeIntegration: true,
+            nodeIntegrationInWorker: true,
+            // nodeIntegrationInSubFrames: true,
             enableRemoteModule: true,
             webSecurity: false
         }
     });
 
     mainWindow.loadURL(`file://${path.join(__dirname, '../../mainWindow.html')}`);
+    mainWindow.webContents.openDevTools();
 
-    console.log('[Electron] Main Window Loaded');
+    console.debug('[Electron] Main Window Loaded');
 
     // var devWindow = new BrowserWindow({
     //     title: 'Development Environment',
@@ -34,13 +37,14 @@ function createWindow() {
     //     frame: false,
     //     webPreferences: {
     //         nodeIntegration: true,
+    //         nodeIntegrationInWorker: true,
     //         enableRemoteModule: true
     //     }
     // });
 
     // devWindow.loadURL(`file://${path.join(__dirname, '../../devWindow.html')}`);
 
-    // console.log('[Electron] Development Environment Enabled');
+    // console.debug('[Electron] Development Environment Enabled');
     // devWindow.webContents.openDevTools();
 }
 

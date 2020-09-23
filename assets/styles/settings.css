@@ -1,26 +1,85 @@
-#settings {
-    top: 0;
-    left: 0;
+#settingsOverlay {
+    bottom: 0;
     position: absolute;
     margin: auto;
     display: flex;
+    flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 70px);
     background-color: #131519;
     z-index: 10000;
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: fade;
 }
+
+@keyframes fade {
+    0% {opacity: 0}
+    100% {opacity: 1}
+} 
 
 .settingsHide {
     display: none !important;
 }
 
-#settingsFrame {
+#settingsCloseContainer {
+    top: 0;
+    position: absolute;
+    margin: auto;
+    width: 100%;
+    z-index: 100;
+    /* background-color: wheat; */
+}
+
+#settingsCloseButton {
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 50px 0 0;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+#settingsClose {
+    padding: 5px 15px;
+    background-color: #B30EE6;
+    color: #F6F4EF;
+    font-family: Roboto500;
+    border-radius: 5px;
+    width: max-content;
+    cursor: pointer;
+}
+
+#settingsClose:hover {
+    background-color: #950BBF;
+    color: #F6F4EF;
+}
+
+#settingsClose:active {
+    background-color: #60077A;
+    color: #F6F4EF;
+}
+
+#settingsClose img {
+    width: 35px;
+}
+
+#settingsOverlay iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#settingsOverlay webframe {
+    width: 100%;
+    height: 100%;
+}
+
+#settings {
     margin: auto;
     display: flex;
     width: 100%;
-    max-width: 1200px;
     height: 100%;
-    background-color: #131519;
+    max-width: 1200px;
 }
 
 #settingsTabs {
@@ -32,7 +91,7 @@
     max-width: 250px;
     height: 100%;
     overflow-y: scroll;
-    /* background-color: tomato; */
+    background-color: #131519;
 }
 
 #settingsTabs p {
@@ -69,49 +128,151 @@
     position: sticky;
     width: 100%;
     height: 100%;
+    background-color: #171A1F;
 }
 
-#settingsWindow iframe {
+/* #settingsWindow iframe {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#settingsWindowWrap {
+    padding-top: 65px;
+    width: 100%;
+    height: 100%;
+    /* background-color: plum; */
+}
+
+.settingsContainer {
+    margin: 0 50px;
+    height: max-content;
+    background-color: #131519;
+}
+
+.settingItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
 
-
-
-
-
-#settingsCloseContainer {
-    display: none;
-    top: 20;
-    left: 0;
-    margin: auto;
-    position: relative;
-    max-width: 1200px;
-    background-color: thistle;
+.settingsItemSeperator {
+    margin: 0 35px;
+    height: 1px;
+    background-color: #6b6b6b;
 }
 
-#settingsClose {
-    top: 0;
-    right: 0;
-    position: absolute;
-    padding: 10px 10px 0 0;
+.settingInfo {
+    padding: 20px 35px;
+}
+
+.settingsSidebySide {
+    padding: 5px 35px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
 }
 
-.fa-times-circle {
-    margin-bottom: 5px;
-    font-size: 35px;
+.settingsSidebySide p:nth-child(1) {
+    padding-right: 5px;
+}
+
+.settingTitle {
+    padding-bottom: 5px;
+    font-family: Roboto700;
+    color: #F6F4E2;
+}
+
+.settingDesc {
     color: #B9BBBA;
 }
 
-.fa-times-circle:hover {
-    cursor: pointer;
-    color: #F6F4EF;
+#WindowsOS {
+    display: none;
+    margin: 0 8px 8px 2px;
+    width: 18px;
 }
 
-#settingsClose p {
-    font-size: 12px;
-    color: #3E3E40;
+#LinuxOS {
+    display: block;
+    margin: 0 8px 8px 2px;
+    width: 18px;
+}
+
+#MacOS {
+    display: none;
+    margin: 0 8px 8px 2px;
+    width: 18px;
+}
+
+
+
+#NVIDIA {
+    display: none;
+    margin: 0 8px 8px 2px;
+    width: 20px;
+}
+
+.toggleSwitch {
+    margin-right: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=checkbox] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    width: 55px;
+    height: 25px;
+    background: #808080;
+    border-radius: 25px;
+    position: relative;
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    background: #F6F4E2;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background: #B30EE6;
+}
+
+input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 30px;
 }

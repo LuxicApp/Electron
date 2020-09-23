@@ -3,38 +3,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
     <link rel="stylesheet" type="text/css" href="assets/styles/mainWindow.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/musicbar.css">
     <link rel="stylesheet" type="text/css" href="assets/styles/settings.css">
 </head>
 <body>
-    <div id="settings" class="settingsHide">
-        <div id="settingsFrame">
-            <div id="settingsTabs">
-                <p style="margin-bottom: 8px;">User Settings</p>
-                <a href="" target="settingsWindow">My Account</a>
-                <a href="" target="settingsWindow">Privacy</a>
-                <a href="" target="settingsWindow">Connections</a>
-                <a href="" target="settingsWindow">Subscriptions</a>
-                <a href="" target="settingsWindow">Inventory</a>
-                <a href="" target="settingsWindow">Payment History</a>
-                <p style="margin-bottom: 8px; margin-top: 15px;">App Settings</p>
-                <a href="" target="settingsWindow">Notifications</a>
-                <a href="" target="settingsWindow">Overlay</a>
-                <a href="" target="settingsWindow">Keybinds</a>
-                <a href="" target="settingsWindow">Appearance</a>
-                <a href="" target="settingsWindow">Language</a>
-                <a href="" target="settingsWindow">Windows Settings</a>
-                <p style="margin-bottom: 8px; margin-top: 15px;">Extra</p>
-                <a href="" target="settingsWindow"><i class="fas fa-pager"></i>Change log</a>
-                <a href="" target="settingsWindow"><i class="fas fa-download"></i>Check for Updates</a>
-                <a href="" target="settingsWindow"><i class="fab fa-github"></i>Github</a>
-                <p class="settingsAppInformation" style="margin-top: 8px;">Stable 1.0.0</p>
-                <p class="settingsAppInformation">Windows 10 64-Bit</p>
-            </div>
-            <div id="settingsWindow">
-                <iframe src="assets/frames/test.html" name="settingsWindow" allowTransparency="true" frameborder="0"></iframe>
-            </div>
-        </div>
-    </div>
     <div id="appWindow">
         <div id="appWindowFrame">
             <div id="appTopbar">
@@ -96,6 +68,124 @@
                 </div>
             </div>
             <div id="appMainWindow">
+                <div id="settingsOverlay" class="settingsHide">
+                    <div id="settingsCloseContainer">
+                        <div id="settingsCloseButton">
+                            <div id="settingsClose">Close</div>
+                        </div>
+                    </div>
+                    <div id="settings">
+                        <div id="settingsTabs">
+                            <p style="margin-bottom: 8px;">User Settings</p>
+                            <a href="settings/account.html" target="settingsWindow">My Account</a>
+                            <a href="settings/" target="settingsWindow">Privacy</a>
+                            <a href="settings/" target="settingsWindow">Connections</a>
+                            <a href="settings/" target="settingsWindow">Subscriptions</a>
+                            <a href="settings/" target="settingsWindow">Inventory</a>
+                            <a href="settings/" target="settingsWindow">Payment History</a>
+                            <p style="margin-bottom: 8px; margin-top: 15px;">App Settings</p>
+                            <a href="settings/notifications.html" target="settingsWindow">Notifications</a>
+                            <a href="settings/" target="settingsWindow">Overlay</a>
+                            <a href="settings/" target="settingsWindow">Keybinds</a>
+                            <a href="settings/" target="settingsWindow">Appearance</a>
+                            <a href="settings/" target="settingsWindow">Language</a>
+                            <a href="settings/systeminformation.html" target="settingsWindow">System Information</a>
+                            <a href="settings/" target="settingsWindow">Windows Settings</a>
+                            <p style="margin-bottom: 8px; margin-top: 15px;">Extra</p>
+                            <a href="settings/" target="settingsWindow"><i class="fas fa-pager"></i>Change log</a>
+                            <a href="settings/" target="settingsWindow"><i class="fas fa-download"></i>Check for Updates</a>
+                            <a onclick=""><i class="fab fa-github"></i>Github</a>
+                            <p class="settingsAppInformation" style="margin-top: 8px;">Stable 1.0.0</p>
+                            <p class="settingsAppInformation">Windows 10 64-Bit</p>
+                        </div>
+                        <div id="settingsWindow">
+                            <div id="settingsWindowWrap">
+                                <div class="settingsContainer" style="padding: 10px 0 30px 0;">
+                                    <div class="settingItem">
+                                        <span class="settingInfo">
+                                            <p class="settingTitle">Your system information</p>
+                                            <p class="settingDesc">Nice specs and all but does it have RGB?</p>
+                                        </span>
+                                    </div>
+                                    <div class="settingsItemSeperator"></div>
+                                    <div class="settingItem" style="margin-top: 35px;">
+                                        <span class="settingInfo settingsSidebySide">
+                                            <p class="settingTitle" id="writeDataSYS"></p>
+                                        </span>
+                                    </div>
+                                    <div class="settingItem">
+                                        <span class="settingInfo settingsSidebySide">
+                                            <p class="settingTitle">System OS:</p>
+                                            <img id="WindowsOS" src="assets/cdn/icons/windows.svg" draggable="false">
+                                            <img id="LinuxOS" src="assets/cdn/icons/linux.svg" draggable="false">
+                                            <img id="MacOS" src="assets/cdn/icons/macOS.svg" draggable="false">
+                                            <p class="settingDesc" id="writeDataOS"></p>
+                                        </span>
+                                    </div>
+                                    <div class="settingItem">
+                                        <span class="settingInfo settingsSidebySide">
+                                            <p class="settingTitle">Motherboard:</p>
+                                            <p class="settingDesc" id="writeDataMOBO"></p>
+                                        </span>
+                                    </div>
+                                    <div class="settingItem">
+                                        <span class="settingInfo settingsSidebySide">
+                                            <p class="settingTitle">CPU:</p>
+                                            <p class="settingDesc" id="writeDataCPU"></p>
+                                        </span>
+                                    </div>
+                                    <div class="settingItem">
+                                        <span class="settingInfo settingsSidebySide">
+                                            <p class="settingTitle">Memory:</p>
+                                            <p class="settingDesc" id="writeDataMEM"></p>
+                                        </span>
+                                    </div>
+                                    <div class="settingItem">
+                                        <span class="settingInfo settingsSidebySide">
+                                            <p class="settingTitle">Graphics Card:</p>
+                                            <img class="settingsicon" id="NVIDIA" src="assets/cdn/icons/nvidia.svg" draggable="false">
+                                            <p class="settingDesc" id="writeDataGPU"></p>
+                                        </span>
+                                    </div>
+                                    <div class="settingsItemSeperator" style="margin-top: 35px;"></div>
+                                    <div class="settingItem">
+                                        <span class="settingInfo">
+                                            <p class="settingTitle">Update system information</p>
+                                            <p class="settingDesc">Manually starts fetching your beefy computer specifications.</p>
+                                        </span>
+                                        <div class="toggleSwitch">
+                                            <input type="checkbox" id="notificationsSettings1">
+                                            <label for="notificationsSettings1"></label>
+                                        </div>
+                                    </div>
+                                    <div class="settingsItemSeperator"></div>
+                                    <div class="settingItem">
+                                        <span class="settingInfo">
+                                            <p class="settingTitle">Automaticly update system information</p>
+                                            <p class="settingDesc">Auto-starts the fetching of your computer hardware</p>
+                                        </span>
+                                        <div class="toggleSwitch">
+                                            <input type="checkbox" id="notificationsSettings1">
+                                            <label for="notificationsSettings1"></label>
+                                        </div>
+                                    </div>
+                                    <div class="settingsItemSeperator"></div>
+                                    <div class="settingItem">
+                                        <span class="settingInfo">
+                                            <p class="settingTitle">Share system information</p>
+                                            <p class="settingDesc">Creates an extra tab on your profile with your system information.</p>
+                                        </span>
+                                        <div class="toggleSwitch">
+                                            <input type="checkbox" id="notificationsSettings1">
+                                            <label for="notificationsSettings1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <script src="assets/scripts/readsysteminformation.js"></script>
+                        </div>
+                    </div>
+                </div>
                 <div id="appContentFlex">
                     <div id="appSidebar">
                         <div id="appSidebar__icons">
@@ -152,11 +242,14 @@
                             </div>
                         </div>
                         <div id="musicbar__controls">
-                            <!-- <img id="musicbar__shuffle" class="musicbar__padding" draggable="false" src="assets/cdn/icons/musicbarcontrols.svg#controlShuffle">
+                            <img id="musicbar__shuffle" class="musicbar__padding" draggable="false" src="assets/cdn/icons/musicbarcontrols.svg#controlShuffle">
                             <img id="musicbar__songPrevious" class="musicbar__switch musicbar__padding" draggable="false" style="transform: rotate(180deg)" src="assets/cdn/icons/musicbarcontrols.svg#controlSwitch">
-                            <img id="musicbar__play" class="" draggable="false" src="assets/cdn/icons/musicbarcontrols.svg#controlPlay">
+                            <div id="musicbarPlayPause">
+                                <img id="musicbar__play" class="" draggable="false" src="assets/cdn/icons/musicbarcontrols.svg#controlPlay">
+                                <!-- <img id="musicbar__play" class="" draggable="false" src="assets/cdn/icons/musicbarcontrols.svg#controlPause"> -->
+                            </div>
                             <img id="musicbar__songNext" class="musicbar__switch musicbar__padding" draggable="false" src="assets/cdn/icons/musicbarcontrols.svg#controlSwitch">
-                            <img id="musicbar__repeat" class="musicbar__padding" draggable="false" src="assets/cdn/icons/musicbarcontrols.svg#controlRepeat"> -->
+                            <img id="musicbar__repeat" class="musicbar__padding" draggable="false" src="assets/cdn/icons/musicbarcontrols.svg#controlRepeat">
                         </div>
                         <div id="musicbar__volumeControl">
                             <img id="musicbar__volumeStatus" src="assets/cdn/icons/volumestages.svg#volumeMax" draggable="false">
@@ -169,11 +262,13 @@
     </div>
     <!-- High Priority Scripts -->
     <script src="assets/scripts/windowcontrols.js"></script>
-    <!-- <script src="assets/scripts/notification.js"></script> -->
+    <script src="assets/scripts/notification.js"></script>
     <!-- Other -->
     <script src="assets/scripts/volumeslider.js"></script>
     <script src="assets/scripts/settings.js"></script>
     <script src="https://kit.fontawesome.com/0488402c77.js" crossorigin="anonymous"></script>
+    <script src="assets/scripts/musicbar.js"></script>
+    <!-- /// -->
 </body>
 
 </html>

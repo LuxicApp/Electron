@@ -137,12 +137,3 @@
     border-radius: 100%;
     cursor: pointer;
 }
-
-
-#appTopbar__windowControls {
-    -webkit-app-region: no-drag;
-    display: flex;
-    margin-left: auto;
-    height: 25px;
-    z-index: 999999;
-}

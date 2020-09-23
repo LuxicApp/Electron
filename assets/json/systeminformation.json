@@ -1,0 +1,35 @@
+{
+    "System": {
+        "manufacturer": "NZXT"
+    },
+    "SystemOS": {
+        "distro": "Microsoft Windows 10 Pro",
+        "arch": "x64"
+    },
+    "Motherboard": {
+        "manufacturer": "NZXT",
+        "model": "N7 Z390"
+    },
+    "Processor": {
+        "manufacturer": "Intel®",
+        "brand": "Core™ i9-9900K",
+        "speedmax": "3.60 GHz",
+        "cores": 16,
+        "socket": "LGA1151"
+    },
+    "Memory": {
+        "formatted": "32 GB",
+        "bytes": 34286297088
+    },
+    "GraphicCards": [
+        {
+            "model": "NVIDIA GeForce RTX 2060 SUPER",
+            "vram": 4095
+        }
+    ],
+    "Battery": {
+        "hasbattery": false,
+        "acconnected": true,
+        "percent": 0
+    }
+}
