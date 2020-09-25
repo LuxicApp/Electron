@@ -1,0 +1,272 @@
+:root {
+    --appColor: #B30EE6;
+    --appColorDevEnv: #FF9900;
+    --mainColor1: #171A1F;
+    --mainColor2: #F6F4EF;
+}
+
+/*  -------------------
+    Default Styling
+    Dark Theme
+    -------------------  */
+
+html, body {
+    background-color: var(--mainColor1);
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #26292F;
+}
+
+p {
+    font-family: 'Roboto500', sans-serif;
+}
+
+a {
+    font-family: 'Roboto500', sans-serif;
+}
+
+.toggleSwitchLabel {
+    background: #808080;
+}
+
+.toggleSwitchLabel:after {
+    background: #F6F4E2;
+}
+
+.toggle:checked + .toggleSwitchLabel {
+    background: #B30EE6;
+}
+
+/*  -------------------
+    Main Window Styling
+    Dark Theme
+    -------------------  */
+
+#appTopbar {
+    background-color: #131519;
+}
+
+#appTopbar__logo {
+    background-color: var(--appColor);
+}
+
+#appTopbar__logoDev {
+    background-color: var(--appColorDevEnv);
+}
+
+#appTopbar__logo img {
+    width: 50px;
+}
+
+#appTopbar__logoDev img {
+    width: 50px;
+}
+
+#appTopbar__navigation {
+    color: #89898D;
+}
+
+#appTopbar__navigation a:hover {
+    color: #3e3e40;
+}
+
+#appTopbar__activePage {
+    color: var(--mainColor2);
+}
+
+#appTopbar__activePage:hover {
+    color: var(--mainColor2) !important;
+}
+
+#appTopbar_searchContainer {
+    background-color: var(--mainColor1);
+}
+
+#appTopbar_searchBox {
+    font-family: 'Roboto500', sans-serif;
+    color:var(--mainColor2);
+}
+
+#appTopbar__accountName {
+    color: var(--mainColor2);
+}
+
+#appTopbar__accountLevel {
+    color: var(--appColor);
+}
+
+.appTopbar__accountBadge .appTopbar__accountBadgeTooltip {
+    background-color: #3E3E46;
+    font-family: 'Roboto400', sans-serif;
+}
+
+.appTopbar__accountBadgeName {
+    color: var(--mainColor2);
+}
+
+.appTopbar__accountBadgeDesc {
+    color: #89898D;
+}
+
+.appTopbar__controlItem:hover {
+    background-color: #3E3E40;
+}
+
+.appTopbar__controlItem:active {
+    background-color: #252526;
+}
+
+.appTopbar__windowCloseItem:hover {
+    background-color: #F04747;
+}
+
+#appSidebar {
+    background-color: #131519;
+}
+
+.appSidebar__item:hover {
+    border-left: 3px solid #00A5E4;
+}
+
+.appSidebar__item .appSidebar__tooltip {
+    background-color: #3E3E46;
+    color: var(--mainColor2);
+}
+
+#musicbar {
+    background-color: #131519;
+}
+
+#musicbar__durationcontainer {
+    background-color: var(--mainColor2);
+}
+
+#musicbar__durationcontainer::-webkit-slider-thumb {
+    background-color: #00A5E4;
+}
+
+#musicbar__songName {
+    font-size: 14px;
+    color: var(--mainColor2);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+
+#musicbar__songArtist {
+    font-size: 12px;
+    color: #89898D;
+    white-space: nowrap;
+    text-overflow: ellipsis; 
+}
+
+.musicbar__padding:hover {
+    background-color: #89898D;
+}
+
+#musicbar__volumeSlider {
+    background-color: var(--mainColor2);
+}
+  
+#musicbar__volumeSlider::-webkit-slider-thumb {
+    background-color: #00A5E4;
+}
+
+/*  ----------------
+    Settings Styling
+    Dark Theme
+    ----------------  */
+
+#settings__overlay {
+    background-color: #131519;
+}
+
+#settings__close {
+    background-color: #B30EE6;
+    color: var(--mainColor2);
+    font-family: Roboto500;
+}
+
+#settings__close:hover {
+    background-color: #950BBF;
+    color: var(--mainColor2);
+}
+
+#settings__close:active {
+    background-color: #60077A;
+    color: var(--mainColor2);
+}
+
+#settings__menu {
+    background-color: #131519;
+}
+
+#settings__menu p {
+    color: #3E3E40;
+    font-family: Roboto500;
+    text-transform: capitalize;
+}
+
+#settings__menu a {
+    color: #B9BBBA;
+    font-family: Roboto500;
+}
+
+#settings__menu a:hover {
+    color: var(--mainColor2);
+    background-color:#272A2E;
+}
+
+.settings_smallDescription {
+    color: #3E3E40;
+    font-family: Roboto500;
+    text-transform: capitalize;
+}
+
+#settings__window {
+    background-color: var(--mainColor1);
+}
+
+.settings__container {
+    background-color: #131519;
+}
+
+.settings__seperator {
+    background-color: #6B6B6B;
+}
+
+.settings__title {
+    font-family: Roboto700;
+    color: var(--mainColor2);
+}
+
+.settings__description {
+    color: #B9BBBA;
+}
+
+.settings__button {
+    background-color: #B30EE6;
+    color: var(--mainColor2);
+    font-family: Roboto500;
+}
+
+.settings__button:hover {
+    background-color: #950BBF;
+    color: var(--mainColor2);
+}
+
+.settings__button:active {
+    background-color: #60077A;
+    color: var(--mainColor2);
+}

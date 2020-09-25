@@ -1,35 +1,38 @@
 {
-    "System": {
-        "manufacturer": "NZXT"
+    "system": {
+        "manufacturer": "Micro-Star International Co., Ltd."
     },
-    "SystemOS": {
-        "distro": "Microsoft Windows 10 Pro",
+    "systemOS": {
+        "distro": "Microsoft Windows 10 Home",
         "arch": "x64"
     },
-    "Motherboard": {
-        "manufacturer": "NZXT",
-        "model": "N7 Z390"
+    "baseboard": {
+        "manufacturer": "Micro-Star International Co., Ltd.",
+        "model": "MS-16J9"
     },
-    "Processor": {
+    "cpu": {
         "manufacturer": "Intel®",
-        "brand": "Core™ i9-9900K",
-        "speedmax": "3.60 GHz",
-        "cores": 16,
-        "socket": "LGA1151"
+        "brand": "Core™ i7-7700HQ",
+        "speedmax": "2.80 GHz",
+        "cores": 8
     },
-    "Memory": {
-        "formatted": "32 GB",
-        "bytes": 34286297088
+    "memory": {
+        "bytes": 8502136832,
+        "formatted": "8 GB"
     },
-    "GraphicCards": [
+    "battery": {
+        "hasBattery": true,
+        "isCharging": true,
+        "chargedFor": 58
+    },
+    "graphics": [
         {
-            "model": "NVIDIA GeForce RTX 2060 SUPER",
-            "vram": 4095
+            "model": "NVIDIA GeForce GTX 1050",
+            "vram": 2048
+        },
+        {
+            "model": "Intel(R) HD Graphics 630",
+            "vram": 1024
         }
-    ],
-    "Battery": {
-        "hasbattery": false,
-        "acconnected": true,
-        "percent": 0
-    }
+    ]
 }

@@ -1,16 +1,20 @@
-$('#appTopbar__windowMinimize').click(function () {
-    win.minimize();
-});
+const $ = require('jquery');
+const {remote} = require('electron');
+const win = remote.getCurrentWindow();
 
-$('#appTopbar__windowMaximize').click(function () {
+function windowMinimize() {
+    win.minimize();
+}
+
+function windowMaximize() {
     if (win.isMaximized()) {
         win.unmaximize();
     } else {
         win.maximize();
     }
     console.log('[Electron] Current window is maximized: ' + win.isMaximized());
-});
+}
 
-$('#appTopbar__windowClose').click(function () {
+function windowClose() {
     win.close();
-});
+}

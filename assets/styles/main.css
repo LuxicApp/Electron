@@ -4,25 +4,10 @@ body {
     margin: 0;
     width: 100%;
     height: 100%;
-    background-color: #171A1F;
 }
 
 * {
     box-sizing: border-box;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: transparent;
-}
-
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #26292F;
 }
 
 @font-face {
@@ -87,7 +72,6 @@ body {
 
 p {
     margin: 0;
-    font-family: 'Roboto500', sans-serif;
 }
 
 a {
@@ -95,5 +79,45 @@ a {
     color: unset;
     cursor: pointer;
     text-decoration: none;
-    font-family: 'Roboto500', sans-serif;
+}
+
+.toggleSwitch {
+    margin-right: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.toggleSwitchLabel {
+    cursor: pointer;
+    width: 55px;
+    height: 25px;
+    border-radius: 25px;
+    position: relative;
+}
+
+.toggleSwitchLabel:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+.toggle:checked + .toggleSwitchLabel:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+.toggleSwitchLabel:active:after {
+    width: 30px;
 }

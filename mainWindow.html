@@ -5,6 +5,10 @@
     <link rel="stylesheet" type="text/css" href="assets/styles/mainWindow.css">
     <link rel="stylesheet" type="text/css" href="assets/styles/musicbar.css">
     <link rel="stylesheet" type="text/css" href="assets/styles/settings.css">
+    <!-- // -->
+    <link rel="stylesheet" type="text/css" href="assets/styles/themes/dark-theme.css">
+    <link rel="stylesheet alternate" type="text/css" href="assets/styles/themes/light-theme.css">
+    <script src="assets/libs/jquery-3.5.1.min.js"></script>
 </head>
 <body>
     <div id="appWindow">
@@ -46,7 +50,7 @@
                             <!-- <div class="appTopbar__accountBadgeTooltip">
                                 <span class="appTopbar__accountBadgeContent">
                                     <img src="media/icons/cake.svg" width="35px">
-                                    <div class="sti">
+                                    <div>
                                         <p class="appTopbar__accountBadgeName">Happy birthday!</p>
                                         <p class="appTopbar__accountBadgeDesc">1 year member</p>
                                     </div>
@@ -56,26 +60,26 @@
                     </div>
                 </div>
                 <div id="appTopbar__windowControls">
-                    <div id="appTopbar__windowMinimize" class="appTopbar__controlItem">
+                    <div id="appTopbar__windowMinimize" class="appTopbar__controlItem" onclick="windowMinimize()">
                         <img src="assets/cdn/icons/windowcontrols.svg#windowMinimize">
                     </div>
-                    <div id="appTopbar__windowMaximize" class="appTopbar__controlItem">
+                    <div id="appTopbar__windowMaximize" class="appTopbar__controlItem" onclick="windowMaximize()">
                         <img src="assets/cdn/icons/windowcontrols.svg#windowMaximize">
                     </div>
-                    <div id="appTopbar__windowClose" class="appTopbar__controlItem appTopbar__windowCloseItem">
+                    <div id="appTopbar__windowClose" class="appTopbar__controlItem appTopbar__windowCloseItem" onclick="windowClose()">
                         <img src="assets/cdn/icons/windowcontrols.svg#windowClose">
                     </div>
                 </div>
             </div>
             <div id="appMainWindow">
-                <div id="settingsOverlay" class="settingsHide">
-                    <div id="settingsCloseContainer">
-                        <div id="settingsCloseButton">
-                            <div id="settingsClose">Close</div>
+                <div id="settings__overlay" class="settingsHide">
+                    <div id="settings__closeContainer">
+                        <div id="settings__closeButton">
+                            <div id="settings__close">Close</div>
                         </div>
                     </div>
                     <div id="settings">
-                        <div id="settingsTabs">
+                        <div id="settings__menu">
                             <p style="margin-bottom: 8px;">User Settings</p>
                             <a href="settings/account.html" target="settingsWindow">My Account</a>
                             <a href="settings/" target="settingsWindow">Privacy</a>
@@ -95,89 +99,87 @@
                             <a href="settings/" target="settingsWindow"><i class="fas fa-pager"></i>Change log</a>
                             <a href="settings/" target="settingsWindow"><i class="fas fa-download"></i>Check for Updates</a>
                             <a onclick=""><i class="fab fa-github"></i>Github</a>
-                            <p class="settingsAppInformation" style="margin-top: 8px;">Stable 1.0.0</p>
-                            <p class="settingsAppInformation">Windows 10 64-Bit</p>
+                            <p class="settings_smallDescription" style="margin-top: 8px;">Stable 1.0.0</p>
+                            <p class="settings_smallDescription">Windows 10 64-Bit</p>
                         </div>
-                        <div id="settingsWindow">
-                            <div id="settingsWindowWrap">
-                                <div class="settingsContainer" style="padding: 10px 0 30px 0;">
-                                    <div class="settingItem">
-                                        <span class="settingInfo">
-                                            <p class="settingTitle">Your system information</p>
-                                            <p class="settingDesc">Nice specs and all but does it have RGB?</p>
+                        <div id="settings__window">
+                            <div id="settings__windowWrap">
+                                <div class="settings__container" style="padding: 10px 0 30px 0;">
+                                    <div class="settings__item">
+                                        <span class="settings__text">
+                                            <p class="settings__title">Your system information</p>
+                                            <p class="settings__Description">Nice specs and all but does it have RGB?</p>
                                         </span>
                                     </div>
-                                    <div class="settingsItemSeperator"></div>
-                                    <div class="settingItem" style="margin-top: 35px;">
-                                        <span class="settingInfo settingsSidebySide">
-                                            <p class="settingTitle" id="writeDataSYS"></p>
+                                    <div class="settings__seperator"></div>
+                                    <div class="settings__item" style="margin-top: 35px;">
+                                        <span class="settings__text settings__SBS">
+                                            <p class="settings__title" id="writeDataSYS"></p>
                                         </span>
                                     </div>
-                                    <div class="settingItem">
-                                        <span class="settingInfo settingsSidebySide">
-                                            <p class="settingTitle">System OS:</p>
+                                    <div class="settings__item">
+                                        <span class="settings__text settings__SBS">
+                                            <p class="settings__title">System OS:</p>
                                             <img id="WindowsOS" src="assets/cdn/icons/windows.svg" draggable="false">
                                             <img id="LinuxOS" src="assets/cdn/icons/linux.svg" draggable="false">
                                             <img id="MacOS" src="assets/cdn/icons/macOS.svg" draggable="false">
-                                            <p class="settingDesc" id="writeDataOS"></p>
+                                            <p class="settings__description" id="writeDataOS"></p>
                                         </span>
                                     </div>
-                                    <div class="settingItem">
-                                        <span class="settingInfo settingsSidebySide">
-                                            <p class="settingTitle">Motherboard:</p>
-                                            <p class="settingDesc" id="writeDataMOBO"></p>
+                                    <div class="settings__item">
+                                        <span class="settings__text settings__SBS">
+                                            <p class="settings__title">Motherboard:</p>
+                                            <p class="settings__description" id="writeDataMOBO"></p>
                                         </span>
                                     </div>
-                                    <div class="settingItem">
-                                        <span class="settingInfo settingsSidebySide">
-                                            <p class="settingTitle">CPU:</p>
-                                            <p class="settingDesc" id="writeDataCPU"></p>
+                                    <div class="settings__item">
+                                        <span class="settings__text settings__SBS">
+                                            <p class="settings__title">CPU:</p>
+                                            <p class="settings__description" id="writeDataCPU"></p>
                                         </span>
                                     </div>
-                                    <div class="settingItem">
-                                        <span class="settingInfo settingsSidebySide">
-                                            <p class="settingTitle">Memory:</p>
-                                            <p class="settingDesc" id="writeDataMEM"></p>
+                                    <div class="settings__item">
+                                        <span class="settings__text settings__SBS">
+                                            <p class="settings__title">Memory:</p>
+                                            <p class="settings__description" id="writeDataMEM"></p>
                                         </span>
                                     </div>
-                                    <div class="settingItem">
-                                        <span class="settingInfo settingsSidebySide">
-                                            <p class="settingTitle">Graphics Card:</p>
-                                            <img class="settingsicon" id="NVIDIA" src="assets/cdn/icons/nvidia.svg" draggable="false">
-                                            <p class="settingDesc" id="writeDataGPU"></p>
+                                    <div class="settings__item">
+                                        <span class="settings__text settings__SBS">
+                                            <p class="settings__title">Graphics Card:</p>
+                                            <img id="NVIDIA" src="assets/cdn/icons/nvidia.svg" draggable="false">
+                                            <img id="AMD" src="assets/cdn/icons/amd.svg" draggable="false">
+                                            <ul class="settings__description" id="writeDataGPU"></ul>
                                         </span>
                                     </div>
-                                    <div class="settingsItemSeperator" style="margin-top: 35px;"></div>
-                                    <div class="settingItem">
-                                        <span class="settingInfo">
-                                            <p class="settingTitle">Update system information</p>
-                                            <p class="settingDesc">Manually starts fetching your beefy computer specifications.</p>
+                                    <div class="settings__seperator" style="margin-top: 35px;"></div>
+                                    <div class="settings__item">
+                                        <span class="settings__text">
+                                            <p class="settings__title">Update system information</p>
+                                            <p class="settings__description">Manually starts fetching your beefy computer specifications.</p>
+                                        </span>
+                                        <div class="settings__button">Update</div>
+                                    </div>
+                                    <div class="settings__seperator"></div>
+                                    <div class="settings__item">
+                                        <span class="settings__text">
+                                            <p class="settings__title">Automaticly update system information</p>
+                                            <p class="settings__description">Auto-starts the fetching of your computer hardware</p>
                                         </span>
                                         <div class="toggleSwitch">
-                                            <input type="checkbox" id="notificationsSettings1">
-                                            <label for="notificationsSettings1"></label>
+                                            <input class="toggle" type="checkbox" id="systeminformation1">
+                                            <label class="toggleSwitchLabel" for="systeminformation1"></label>
                                         </div>
                                     </div>
-                                    <div class="settingsItemSeperator"></div>
-                                    <div class="settingItem">
-                                        <span class="settingInfo">
-                                            <p class="settingTitle">Automaticly update system information</p>
-                                            <p class="settingDesc">Auto-starts the fetching of your computer hardware</p>
+                                    <div class="settings__seperator"></div>
+                                    <div class="settings__item">
+                                        <span class="settings__text">
+                                            <p class="settings__title">Share system information</p>
+                                            <p class="settings__description">Creates an extra tab on your profile with your system information.</p>
                                         </span>
                                         <div class="toggleSwitch">
-                                            <input type="checkbox" id="notificationsSettings1">
-                                            <label for="notificationsSettings1"></label>
-                                        </div>
-                                    </div>
-                                    <div class="settingsItemSeperator"></div>
-                                    <div class="settingItem">
-                                        <span class="settingInfo">
-                                            <p class="settingTitle">Share system information</p>
-                                            <p class="settingDesc">Creates an extra tab on your profile with your system information.</p>
-                                        </span>
-                                        <div class="toggleSwitch">
-                                            <input type="checkbox" id="notificationsSettings1">
-                                            <label for="notificationsSettings1"></label>
+                                            <input class="toggle" type="checkbox" id="systeminformation2">
+                                            <label class="toggleSwitchLabel" for="systeminformation2"></label>
                                         </div>
                                     </div>
                                 </div>
@@ -219,14 +221,14 @@
                                     <div class="appSidebar__tooltip">Friends</div>
                                 </div>
                             </a>
-                            <div id="settingsShow" class="appSidebar__item">
+                            <div id="settings__show" class="appSidebar__item">
                                 <img src="assets/cdn/icons/sidebar.svg#iconSettings">
                                 <div class="appSidebar__tooltip">Settings</div>
                             </div>
                         </div>
                     </div>
                     <div id="appContentWindow">
-                        <iframe src="" name="appContentWindowFrame" allowTransparency="true" frameborder="0"></iframe>
+                        
                     </div>
                 </div>
                 <div id="musicbar">
@@ -260,15 +262,14 @@
             </div>
         </div>
     </div>
-    <!-- High Priority Scripts -->
-    <script src="assets/scripts/windowcontrols.js"></script>
-    <script src="assets/scripts/notification.js"></script>
-    <!-- Other -->
-    <script src="assets/scripts/volumeslider.js"></script>
-    <script src="assets/scripts/settings.js"></script>
-    <script src="https://kit.fontawesome.com/0488402c77.js" crossorigin="anonymous"></script>
-    <script src="assets/scripts/musicbar.js"></script>
-    <!-- /// -->
+    <script>
+        require('./renderer.js')
+        require('./assets/scripts/windowcontrols.js')
+        require('./assets/scripts/notification.js')
+        require('./assets/scripts/volumeslider.js')
+        require('./assets/scripts/settings.js')
+        require('./assets/scripts/musicbar.js')
+    </script>
 </body>
 
 </html>

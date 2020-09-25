@@ -18,68 +18,11 @@ html, body {
     height: 100%;
 }
 
-#appSidebar {
-    width: 80px;
-    height: 100%;
-    background-color: #131519;
-}
-
-#appSidebar__icons {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100%;
-}
-
-.appSidebar__item {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 80px;
-    height: 70px;
-    border-left: 3px solid transparent;
-}
-
-.appSidebar__item:hover {
-    cursor: pointer;
-    border-left: 3px solid #00A5E4;
-}
-
-.appSidebar__item .appSidebar__tooltip {
-    position: absolute;
-    visibility: hidden;
-    padding: 5px 8px;
-    left: 125px;
-    margin-left: -60px;
-    width: max-content;
-    border-radius: 6px;
-    background-color: #3E3E46;
-    color: #F6F4EF;
-    transition: opacity 0.3s;
-    font-family: 'Roboto500', sans-serif;
-    opacity: 0;
-    z-index: 1;
-  }
-  
-  .appSidebar__item:hover .appSidebar__tooltip {
-    visibility: visible;
-    opacity: 1;
-  }
-
 #appMainWindow {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
-}
-
-#appContentFlex {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
 }
 
 #musicbar {
@@ -88,7 +31,6 @@ html, body {
     flex-direction: column;
     height: 85px;
     width: 100%;
-    background-color: #131519;
 }
 
 #appTopbar {
@@ -98,7 +40,6 @@ html, body {
     justify-content: space-between;
     width: 100%;
     height: 70px;
-    background-color: #131519;
     z-index: 500;
 }
 
@@ -113,7 +54,6 @@ html, body {
     align-items: center;
     width: 80px;
     height: 100%;
-    background-color: #B30EE6;
 }
 
 #appTopbar__logoDev {
@@ -122,7 +62,6 @@ html, body {
     align-items: center;
     width: 80px;
     height: 100%;
-    background-color: orange;
 }
 
 #appTopbar__logo img {
@@ -139,25 +78,12 @@ html, body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    color: #89898D;
     font-weight: 500;
 }
 
 #appTopbar__navigation a {
     -webkit-app-region: no-drag;
     padding: 0 15px;
-}
-
-#appTopbar__navigation a:hover {
-    color: #3e3e40;
-}
-
-#appTopbar__activePage {
-    color: #F6F4EF;
-}
-
-#appTopbar__activePage:hover {
-    color: #F6F4EF !important;
 }
 
 #appTopbar__search {
@@ -176,7 +102,6 @@ html, body {
     justify-content: flex-start;
     height: 35px;
     width: 100%;
-    background-color: #171A1F;
 }
 
 #appTopbar_searchContainer img {
@@ -187,9 +112,7 @@ html, body {
     padding: 0 8px 0 0;
     background-color: transparent;
     border: none;
-    font-family: 'Roboto500', sans-serif;
     font-size: 15px;
-    color: #F6F4EF;
     width: 100%;
 }
 
@@ -225,7 +148,6 @@ html, body {
     -webkit-app-region: no-drag;
     padding: 0 15px 3px 15px;
     font-size: 15px;
-    color: #F6F4EF;
     font-weight: 500;
 }
 
@@ -239,13 +161,41 @@ html, body {
 #appTopbar__accountLevel {
     margin-right: 5px;
     font-size: 12px;
-    color: #00A5E4;
     font-weight: 500;
+}
+
+.appTopbar__accountBadge {
+    position: relative;
+    cursor: pointer;
+}
+
+.appTopbar__accountBadge:hover {
+    cursor: pointer;
 }
 
 .appTopbar__accountBadgeItem {
     margin: 0 3px;
     width: 12px;
+}
+
+.appTopbar__accountBadge .appTopbar__accountBadgeTooltip {
+    position: absolute;
+    visibility: hidden;
+    padding: 10px;
+    left: 80px;
+    top: 0;
+    margin-left: -60px;
+    width: max-content;
+    max-width: 200px;
+    border-radius: 6px;
+    transition: opacity 0.3s;
+    opacity: 0;
+    z-index: 1;
+}
+
+.appTopbar__accountBadge:hover .appTopbar__accountBadgeTooltip {
+    visibility: visible;
+    opacity: 1;
 }
 
 .appTopbar__accountBadgeContent {
@@ -267,7 +217,6 @@ html, body {
     padding-bottom: 5px;
     font-size: 14px;
     font-weight: 500;
-    color: #F6F4EF;
 }
 
 .appTopbar__accountBadgeDesc {
@@ -275,54 +224,6 @@ html, body {
     padding: 0 0 5px 0;
     font-size: 12px;
     font-weight: 400;
-    color: #89898D;
-}
-
-.appTopbar__accountBadge {
-    position: relative;
-    cursor: pointer;
-}
-
-.appTopbar__accountBadge:hover {
-    cursor: pointer;
-}
-
-.appTopbar__accountBadge .appTopbar__accountBadgeTooltip {
-    position: absolute;
-    visibility: hidden;
-    padding: 10px;
-    left: 80px;
-    top: 0;
-    margin-left: -60px;
-    width: max-content;
-    max-width: 200px;
-    border-radius: 6px;
-    background-color: #3E3E46;
-    transition: opacity 0.3s;
-    font-family: 'Roboto400', sans-serif;
-    opacity: 0;
-    z-index: 1;
-  }
-  
-.appTopbar__accountBadge:hover .appTopbar__accountBadgeTooltip {
-    visibility: visible;
-    opacity: 1;
-}
-
-#appContentWindow {
-    width: 100%;
-    height: 100%;
-    /* overflow-x: hidden;
-    overflow-y: scroll; */
-}
-
-#appContentWindow iframe {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    background-color: tomato;
 }
 
 #appTopbar__windowControls {
@@ -342,14 +243,67 @@ html, body {
     cursor: pointer;
 }
 
-.appTopbar__controlItem:hover {
-    background-color: #3E3E40;
+#appMainWindow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
 }
 
-.appTopbar__controlItem:active {
-    background-color: #252526;
+#appContentFlex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-.appTopbar__windowCloseItem:hover {
-    background-color: #F04747;
+#appSidebar {
+    width: 80px;
+    height: 100%;
+}
+
+#appSidebar__icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.appSidebar__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 70px;
+    border-left: 3px solid transparent;
+}
+
+.appSidebar__item:hover {
+    cursor: pointer;
+}
+
+.appSidebar__item .appSidebar__tooltip {
+    position: absolute;
+    visibility: hidden;
+    padding: 5px 8px;
+    left: 125px;
+    margin-left: -60px;
+    width: max-content;
+    border-radius: 6px;
+    transition: opacity 0.3s;
+    font-family: 'Roboto500', sans-serif;
+    opacity: 0;
+    z-index: 1;
+}
+  
+.appSidebar__item:hover .appSidebar__tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+#appContentWindow {
+    width: 100%;
+    height: 100%;
 }
