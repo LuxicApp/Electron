@@ -134,6 +134,18 @@
     padding-bottom: 5px;
 }
 
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.settings__descriptionGraphics {
+    padding: 0 0 8px 0;
+    list-style-type: none;
+    font-family: Roboto500;
+    color: #B9BBBA;
+}
+
 .settings__button {
     margin-right: 35px;
     padding: 5px 15px;

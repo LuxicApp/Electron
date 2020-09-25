@@ -1,3 +1,6 @@
+const {remote} = require('electron');
+const win = remote.getCurrentWindow();
+
 $('#appTopbar__windowMinimize').click(function () {
     win.minimize();
 });

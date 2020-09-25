@@ -9,7 +9,8 @@ function formatBytes(bytes, decimals = 0) {
     return `${parseFloat((bytes / Math.pow(1024, i)).toFixed(dm))} ${sizes[i]}`;
 }
 
-async function getSystemInformation(){
+async function getSystemInformation() {
+    console.debug('%cStarted writing data to systeminformation.json', 'color: #B30EE6')
     const system = await si.system();
     const os = await si.osInfo();
     const baseboard = await si.baseboard();
@@ -49,6 +50,5 @@ async function getSystemInformation(){
     });
 
     fs.writeFile('./assets/json/systeminformation.json', JSON.stringify(systeminformation, null,  4), () => console.debug('Updated the system specifications'));
+    console.debug('%cWritten system specifications to systeminformation.json', 'color: #B30EE6')
 }
-
-getSystemInformation();

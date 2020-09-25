@@ -5,7 +5,6 @@
     <link rel="stylesheet" type="text/css" href="assets/styles/mainWindow.css">
     <link rel="stylesheet" type="text/css" href="assets/styles/musicbar.css">
     <link rel="stylesheet" type="text/css" href="assets/styles/settings.css">
-    <!-- // -->
     <link rel="stylesheet" type="text/css" href="assets/styles/themes/dark-theme.css">
     <link rel="stylesheet alternate" type="text/css" href="assets/styles/themes/light-theme.css">
     <script src="assets/libs/jquery-3.5.1.min.js"></script>
@@ -60,13 +59,13 @@
                     </div>
                 </div>
                 <div id="appTopbar__windowControls">
-                    <div id="appTopbar__windowMinimize" class="appTopbar__controlItem" onclick="windowMinimize()">
+                    <div id="appTopbar__windowMinimize" class="appTopbar__controlItem">
                         <img src="assets/cdn/icons/windowcontrols.svg#windowMinimize">
                     </div>
-                    <div id="appTopbar__windowMaximize" class="appTopbar__controlItem" onclick="windowMaximize()">
+                    <div id="appTopbar__windowMaximize" class="appTopbar__controlItem">
                         <img src="assets/cdn/icons/windowcontrols.svg#windowMaximize">
                     </div>
-                    <div id="appTopbar__windowClose" class="appTopbar__controlItem appTopbar__windowCloseItem" onclick="windowClose()">
+                    <div id="appTopbar__windowClose" class="appTopbar__controlItem appTopbar__windowCloseItem">
                         <img src="assets/cdn/icons/windowcontrols.svg#windowClose">
                     </div>
                 </div>
@@ -147,9 +146,8 @@
                                     <div class="settings__item">
                                         <span class="settings__text settings__SBS">
                                             <p class="settings__title">Graphics Card:</p>
-                                            <img id="NVIDIA" src="assets/cdn/icons/nvidia.svg" draggable="false">
-                                            <img id="AMD" src="assets/cdn/icons/amd.svg" draggable="false">
-                                            <ul class="settings__description" id="writeDataGPU"></ul>
+                                            <div class="settings__descriptionList" id="writeDataGPU">
+                                            </div>
                                         </span>
                                     </div>
                                     <div class="settings__seperator" style="margin-top: 35px;"></div>
@@ -158,7 +156,7 @@
                                             <p class="settings__title">Update system information</p>
                                             <p class="settings__description">Manually starts fetching your beefy computer specifications.</p>
                                         </span>
-                                        <div class="settings__button">Update</div>
+                                        <div class="settings__button" onclick="updateSystemInformation();"></div>
                                     </div>
                                     <div class="settings__seperator"></div>
                                     <div class="settings__item">
@@ -184,7 +182,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <script src="assets/scripts/readsysteminformation.js"></script>
                         </div>
                     </div>
                 </div>
@@ -262,14 +259,17 @@
             </div>
         </div>
     </div>
-    <script>
-        require('./renderer.js')
-        require('./assets/scripts/windowcontrols.js')
-        require('./assets/scripts/notification.js')
-        require('./assets/scripts/volumeslider.js')
-        require('./assets/scripts/settings.js')
-        require('./assets/scripts/musicbar.js')
-    </script>
+    <!-- High Priority Scripts -->
+    <script src="assets/libs/jquery-3.5.1.min.js"></script>
+    <script src="assets/scripts/windowcontrols.js"></script>
+    <script src="assets/scripts/notification.js"></script>
+    <!-- Other -->
+    <script src="assets/scripts/volumeslider.js"></script>
+    <script src="assets/scripts/settings.js"></script>
+    <script src="assets/scripts/musicbar.js"></script>
+    <!-- Settings -->
+    <script src="assets/scripts/getsysinf.js"></script>
+    <script src="assets/scripts/setsysinf.js"></script>
 </body>
 
 </html>

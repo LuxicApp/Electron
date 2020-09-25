@@ -1,9 +1,9 @@
 var appname = 'Luxic';
 var appnotimsg = 'Main Window Loaded';
 var appicon = 'assets/build/appicon.ico';
-var DEVappname = 'Luxic';
-var DEVappnotimsg = 'Development Environment Enabled';
-var DEVappicon = 'assets/build/DEVappicon.ico';
+var appnameDevEnv = 'Luxic';
+var appnotimsgDevEnv = 'Development Environment Enabled';
+var appiconDevEnv = 'assets/build/DEVappicon.ico';
 
 var notification = new Notification(appname, {
     body: appnotimsg,
@@ -11,8 +11,8 @@ var notification = new Notification(appname, {
     silent: true
 });
 
-var notification = new Notification(DEVappname, {
-    body: DEVappnotimsg,
-    icon: DEVappicon,
-    silent: true
-});
+// var notificationDevEnv = new Notification(appnameDevEnv, {
+//     body: appnotimsgDevEnv,
+//     icon: appiconDevEnv,
+//     silent: true
+// });
