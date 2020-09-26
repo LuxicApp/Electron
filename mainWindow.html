@@ -103,7 +103,7 @@
                         </div>
                         <div id="settings__window">
                             <div id="settings__windowWrap">
-                                <div class="settings__container" style="padding: 10px 0 30px 0;">
+                                <div class="settings__container">
                                     <div class="settings__item">
                                         <span class="settings__text">
                                             <p class="settings__title">Your system information</p>
@@ -156,13 +156,13 @@
                                             <p class="settings__title">Update system information</p>
                                             <p class="settings__description">Manually starts fetching your beefy computer specifications.</p>
                                         </span>
-                                        <div class="settings__button" onclick="updateSystemInformation();"></div>
+                                        <div class="settings__button" id="updateSystemInformation" onclick="updateSystemInformation();"></div>
                                     </div>
                                     <div class="settings__seperator"></div>
                                     <div class="settings__item">
                                         <span class="settings__text">
-                                            <p class="settings__title">Automaticly update system information</p>
-                                            <p class="settings__description">Auto-starts the fetching of your computer hardware</p>
+                                            <p class="settings__title">Auto-update system information monthly</p>
+                                            <p class="settings__description">Montly check if your hardware is still the same.</p>
                                         </span>
                                         <div class="toggleSwitch">
                                             <input class="toggle" type="checkbox" id="systeminformation1">

@@ -10,45 +10,47 @@ function formatBytes(bytes, decimals = 0) {
 }
 
 async function getSystemInformation() {
-    console.debug('%cStarted writing data to systeminformation.json', 'color: #B30EE6')
-    const system = await si.system();
-    const os = await si.osInfo();
-    const baseboard = await si.baseboard();
-    const cpu = await si.cpu();
-    const memory = await si.mem();
-    const graphics = await si.graphics();
+    return new Promise(async resolve => {
+        console.debug('%cStarted writing data to systeminformation.json', 'color: #B30EE6')
+        const system = await si.system();
+        const os = await si.osInfo();
+        const baseboard = await si.baseboard();
+        const cpu = await si.cpu();
+        const memory = await si.mem();
+        const graphics = await si.graphics();
+        const systeminformation = {
+            system: {
+                manufacturer: system.manufacturer
+            },
+            systemOS: {
+                distro: os.distro,
+                arch: os.arch
+            },
+            baseboard: {
+                manufacturer: baseboard.manufacturer,
+                model: baseboard.model
+            },
+            cpu: {
+                manufacturer: cpu.manufacturer,
+                brand: cpu.brand,
+                speedmax: `${cpu.speedmax} GHz`,
+                cores: cpu.cores
+            },
+            memory: {
+                bytes: memory.total,
+                formatted: formatBytes(memory.total)
+            }
+        };
+        systeminformation.graphics = [];
 
-    const systeminformation = {
-        system: {
-            manufacturer: system.manufacturer
-        },
-        systemOS: {
-            distro: os.distro,
-            arch: os.arch
-        },
-        baseboard: {
-            manufacturer: baseboard.manufacturer,
-            model: baseboard.model
-        },
-        cpu: {
-            manufacturer: cpu.manufacturer,
-            brand: cpu.brand,
-            speedmax: `${cpu.speedmax} GHz`,
-            cores: cpu.cores
-        },
-        memory: {
-            bytes: memory.total,
-            formatted: formatBytes(memory.total)
-        }
-    };
-
-    systeminformation.graphics = [];
-
-    graphics.controllers.forEach((controller, index) => systeminformation.graphics[index] = {
-        model: controller.model,
-        vram: controller.vram
+        graphics.controllers.forEach((controller, index) => systeminformation.graphics[index] = {
+            model: controller.model,
+            vram: controller.vram
+        });
+        fs.writeFile('./assets/json/systeminformation.json', JSON.stringify(systeminformation, null, 4), () => {
+            console.debug('Updated the system specifications')
+            console.debug('%cWritten system specifications to systeminformation.json', 'color: #B30EE6')
+            resolve();
+        });
     });
-
-    fs.writeFile('./assets/json/systeminformation.json', JSON.stringify(systeminformation, null,  4), () => console.debug('Updated the system specifications'));
-    console.debug('%cWritten system specifications to systeminformation.json', 'color: #B30EE6')
 }

@@ -11,8 +11,8 @@ var notification = new Notification(appname, {
     silent: true
 });
 
-// var notificationDevEnv = new Notification(appnameDevEnv, {
-//     body: appnotimsgDevEnv,
-//     icon: appiconDevEnv,
-//     silent: true
-// });
+var notificationDevEnv = new Notification(appnameDevEnv, {
+    body: appnotimsgDevEnv,
+    icon: appiconDevEnv,
+    silent: true
+});

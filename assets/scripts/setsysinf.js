@@ -2,10 +2,10 @@ let systeminformation;
 
 try {
     systeminformation = require('./assets/json/systeminformation.json');
+    document.getElementById('updateSystemInformation').innerHTML = 'Update';
     setSystemInformation();
 } catch {
-    console.log('222');
-    document.getElementsByClassName('settings__button').innerHTML = 'Get';
+    document.getElementById('updateSystemInformation').innerHTML = 'Get';
 }
 
 function setSystemInformation() {
@@ -30,5 +30,6 @@ async function updateSystemInformation() {
     document.getElementById('writeDataCPU').innerHTML = `${systeminformation.cpu.manufacturer} ${systeminformation.cpu.brand} w/ ${systeminformation.cpu.cores} cores @ ${systeminformation.cpu.speedmax}`;
     document.getElementById('writeDataMEM').innerHTML = `${systeminformation.memory.formatted} (${systeminformation.memory.bytes} bytes)`;
     systeminformation.graphics.forEach((cardObject) => document.getElementById("writeDataGPU").innerHTML += `<p class="settings__descriptionGraphics">${cardObject.model}</p>`);
+    document.getElementById('updateSystemInformation').innerHTML = 'Update';
     console.debug("%cUpdated system information", 'color: #B30EE6');
 }
