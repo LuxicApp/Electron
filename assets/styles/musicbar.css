@@ -21,16 +21,22 @@
     width: 100%;
     height: 5px;
     outline: none;
-    transition: opacity .2s;
+    transition: background 450ms ease-in;
     z-index: 2;
 }
 
 #musicbar__durationcontainer::-webkit-slider-thumb {
+    visibility: hidden;
+}
+
+#musicbar__durationcontainer:hover::-webkit-slider-thumb {
+    visibility: visible;
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    border-radius: 25px;
+    background-color:#B30EE6;
     cursor: pointer;
 }
 
@@ -120,12 +126,18 @@
     transition: opacity .2s;
     z-index: 2;
 }
-  
+
 #musicbar__volumeSlider::-webkit-slider-thumb {
+    visibility: hidden;
+}
+
+#musicbar__volumeSlider:hover::-webkit-slider-thumb {
+    visibility: visible;
     -webkit-appearance: none;
     appearance: none;
-    width: 12px;
-    height: 12px;
-    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    border-radius: 25px;
+    background-color:#B30EE6;
     cursor: pointer;
 }
