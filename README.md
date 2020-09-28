@@ -1,5 +1,6 @@
 ## Project Luxic
 Project Luxic is a all-in-one light-weight gaming, chatting and community platform.
+Connect your favorite platforms and play seamlessly with your friends!
 
 ![GitHub Logo](/assets/cdn/readme/appScreenshot.png)
 
