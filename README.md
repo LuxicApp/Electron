@@ -2,7 +2,6 @@
 Project Luxic is a all-in-one light-weight gaming, chatting and community platform.
 
 ![GitHub Logo](/assets/cdn/readme/appScreenshot.png)
-Format: ![Alt Text](assets/cdn/readme/demo.png)
 
 ## Installation
 First step is to install all node_modules
