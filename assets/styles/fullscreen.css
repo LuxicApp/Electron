@@ -1,0 +1,100 @@
+html, body {
+    display: flex;
+    align-items: flex-end;
+}
+
+#appWindow {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#appTopbar {
+    position: absolute;
+    -webkit-app-region: drag;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 100px;
+    z-index: 500;
+    overflow: hidden;
+}
+
+.appTopbar__grabArea {
+    -webkit-app-region: no-drag;
+    position: absolute;
+}
+
+#appTopbar__sectionLogo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+#appTopbar__Logo {
+    margin-left: 40px;
+    width: 150px;
+}
+
+#appTopbar__sectionNav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#appTopbar__sectionAccount {
+    width: 100%;
+}
+
+#appBackground {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#appBackground__gameInformation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    z-index: 1;
+    /* background-color: salmon; */
+}
+
+#appTitle {
+    margin: 0;
+    font-family: 'Jost', sans-serif;
+    color: #F6F4EF;
+    font-size: 75px;
+}
+
+#appBackground__vignette {
+    position: absolute;
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    box-shadow: inset 0px 0px 300px 150px rgba(10,11,32,1);
+}
+
+#appBackground__image {
+    width: 100%;
+    max-width: 1920px;
+    height: 100%;
+    box-shadow: inset 4px 0px 87px 52px rgba(10,11,32,1);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.pepernoot {
+    width: 100%;
+    height: max-content;
+    z-index: 1;
+}

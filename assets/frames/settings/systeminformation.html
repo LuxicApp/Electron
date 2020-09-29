@@ -1,58 +1,86 @@
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="../../styles/main.css">
-    <link rel="stylesheet" type="text/css" href="../../styles/settings.css">
-</head>
-<body>
-    <div id="settingsWindowWrap">
-        <div class="settingsContainer" style="padding: 10px 0 30px 0;">
-            <div class="settingItem">
-                <span class="settingInfo">
-                    <p class="settingTitle">Your system information</p>
-                    <p class="settingDesc">Nice specs and all but does it have RGB?</p>
+<div id="settings__window">
+    <div id="settings__windowWrap">
+        <div class="settings__container">
+            <div class="settings__item">
+                <span class="settings__text">
+                    <p class="settings__title">Your system information</p>
+                    <p class="settings__Description">Nice specs and all but does it have RGB?</p>
                 </span>
             </div>
-            <div class="settingsItemSeperator"></div>
-            <div class="settingItem" style="margin-top: 25px;">
-                <span class="settingInfo settingsSidebySide">
-                    <p class="settingTitle" id="test"></p>
+            <div class="settings__seperator"></div>
+            <div class="settings__item" style="margin-top: 35px;">
+                <span class="settings__text settings__SBS">
+                    <p class="settings__title" id="writeDataSYS"></p>
                 </span>
             </div>
-            <div class="settingItem" style="margin-top: 25px;">
-                <span class="settingInfo settingsSidebySide">
-                    <p class="settingTitle">System:</p>
-                    <p class="settingDesc" id="writeDataSYS"></p>
+            <div class="settings__item">
+                <span class="settings__text settings__SBS">
+                    <p class="settings__title">System OS:</p>
+                    <img id="WindowsOS" src="assets/cdn/icons/windows.svg" draggable="false">
+                    <img id="LinuxOS" src="assets/cdn/icons/linux.svg" draggable="false">
+                    <img id="MacOS" src="assets/cdn/icons/macOS.svg" draggable="false">
+                    <p class="settings__description" id="writeDataOS"></p>
                 </span>
             </div>
-            <div class="settingItem">
-                <span class="settingInfo settingsSidebySide">
-                    <p class="settingTitle">System OS:</p>
-                    <p class="settingDesc" id="writeDataOS"></p>
+            <div class="settings__item">
+                <span class="settings__text settings__SBS">
+                    <p class="settings__title">Motherboard:</p>
+                    <p class="settings__description" id="writeDataMOBO"></p>
                 </span>
             </div>
-            <div class="settingItem">
-                <span class="settingInfo settingsSidebySide">
-                    <p class="settingTitle">CPU:</p>
-                    <p class="settingDesc" id="writeDataCPU"></p>
+            <div class="settings__item">
+                <span class="settings__text settings__SBS">
+                    <p class="settings__title">CPU:</p>
+                    <p class="settings__description" id="writeDataCPU"></p>
                 </span>
             </div>
-            <div class="settingItem">
-                <span class="settingInfo settingsSidebySide">
-                    <p class="settingTitle">Memory:</p>
-                    <p class="settingDesc" id="writeDataMEM"></p>
+            <div class="settings__item">
+                <span class="settings__text settings__SBS">
+                    <p class="settings__title">Memory:</p>
+                    <p class="settings__description" id="writeDataMEM"></p>
                 </span>
             </div>
-            <div class="settingItem">
-                <span class="settingInfo settingsSidebySide">
-                    <p class="settingTitle">Graphics Card:</p>
-                    <p class="settingDesc" id="writeDataGPU"></p>
+            <div class="settings__item">
+                <span class="settings__text settings__SBS">
+                    <p class="settings__title">Graphics Card:</p>
+                    <div class="settings__descriptionList" id="writeDataGPU">
+                    </div>
                 </span>
+            </div>
+            <div class="settings__seperator" style="margin-top: 35px;"></div>
+            <div class="settings__item">
+                <span class="settings__text">
+                    <p class="settings__title">Update system information</p>
+                    <p class="settings__description">Manually starts fetching your beefy computer specifications.</p>
+                </span>
+                <div class="settings__button" id="updateSystemInformation" onclick="updateSystemInformation();"></div>
+            </div>
+            <div class="settings__seperator"></div>
+            <div class="settings__item">
+                <span class="settings__text">
+                    <p class="settings__title">Auto-update system information monthly</p>
+                    <p class="settings__description">Montly check if your hardware is still the same.</p>
+                </span>
+                <div class="toggleSwitch">
+                    <input class="toggle" type="checkbox" id="systeminformation1">
+                    <label class="toggleSwitchLabel" for="systeminformation1"></label>
+                </div>
+            </div>
+            <div class="settings__seperator"></div>
+            <div class="settings__item">
+                <span class="settings__text">
+                    <p class="settings__title">Share system information</p>
+                    <p class="settings__description">Creates an extra tab on your profile with your system information.</p>
+                </span>
+                <div class="toggleSwitch">
+                    <input class="toggle" type="checkbox" id="systeminformation2">
+                    <label class="toggleSwitchLabel" for="systeminformation2"></label>
+                </div>
             </div>
         </div>
     </div>
-    <!-- Scripts -->
-    <script src="../../scripts/parseSystemInfo.js"></script>
-</body>
+</div>
 
-</html>
+<!-- Scripts -->
+<script src="assets/scripts/getsysinf.js"></script>
+<script src="assets/scripts/setsysinf.js"></script>

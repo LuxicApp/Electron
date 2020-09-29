@@ -1,4 +1,9 @@
-const {app, BrowserWindow, globalShortcut, remote} = require('electron');
+const {
+    app,
+    BrowserWindow,
+    globalShortcut,
+    remote
+} = require('electron');
 const path = require('path');
 const chalk = require('chalk');
 const success = chalk.hex('#09E189');
@@ -28,29 +33,32 @@ function createWindow() {
         }
     });
 
-    globalShortcut.register('F5', function() {
+    console.log(chalk.blue('[Electron] Main Window Loaded'));
+    mainWindow.loadURL(`file://${path.join(__dirname, '../../mainWindow.html')}`);
+
+    globalShortcut.register('F5', function () {
         console.log(success('[KeyStroke] F5'))
-		console.log(success('[Electron] Reloading Window'))
-		mainWindow.reload();
+        console.log(success('[Electron] Reloading Window'))
+        mainWindow.reload();
     });
 
-    globalShortcut.register('CommandOrControl+R', function() {
+    globalShortcut.register('CommandOrControl+R', function () {
         console.log(success('[KeyStroke] CommandOrControl + R'))
-		console.log(success('[Electron] Restarting Application'))
-		app.quit();
+        console.log(success('[Electron] Restarting Application'))
+        app.quit();
         app.relaunch();
     });
 
-    globalShortcut.register('F6', function() {
+    globalShortcut.register('F6', function () {
         console.log(success('[KeyStroke] F6'))
-		console.log(success('[Electron] Opening Inspect Element.'))
-		mainWindow.webContents.openDevTools();
+        console.log(success('[Electron] Opening Inspect Element.'))
+        mainWindow.webContents.openDevTools();
     });
-    
-	globalShortcut.register('F7', function() {
+
+    globalShortcut.register('F7', function () {
         console.log(success('[KeyStroke] F7'))
-		console.log(success('[Electron] Opening developer environment'))
-		var devWindow = new BrowserWindow({
+        console.log(success('[Electron] Opening developer environment'))
+        var devWindow = new BrowserWindow({
             title: 'Development Environment',
             width: 1170,
             height: 650,
@@ -71,8 +79,31 @@ function createWindow() {
         devWindow.loadURL(`file://${path.join(__dirname, '../../devWindow.html')}`);
     });
 
-    mainWindow.loadURL(`file://${path.join(__dirname, '../../mainWindow.html')}`);
-    console.log(chalk.blue('[Electron] Main Window Loaded'));
+    globalShortcut.register('CommandOrControl+F11', function () {
+        console.log(success('[KeyStroke] F7'))
+        console.log(success('[Electron] Opening developer environment'))
+        var fullscreenWindow = new BrowserWindow({
+            title: 'Luxic',
+            width: 1170,
+            height: 650,
+            minWidth: 1170,
+            minHeight: 650,
+            icon: 'assets/build/appicon.ico',
+            backgroundColor: '#171A1F',
+            frame: false,
+            fullscreen: true,
+            webPreferences: {
+                nodeIntegration: true,
+                nodeIntegrationInWorker: true,
+                enableRemoteModule: true,
+                webSecurity: true,
+                worldSafeExecuteJavaScript: true
+            }
+        });
+        console.log('[Electron] Fullscreen app started');
+        fullscreenWindow.loadURL(`file://${path.join(__dirname, '../../fullscreenWindow.html')}`);
+        fullscreenWindow.maximize()
+    });
 }
 
 app.on('ready', createWindow);

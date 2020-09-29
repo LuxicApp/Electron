@@ -1,0 +1,94 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="assets/styles/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/fullscreen.css">
+    <link rel="stylesheet" type="text/css" href="assets/styles/library.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/styles/themes/dark-theme.css"> -->
+    <!-- <link rel="stylesheet alternate" type="text/css" href="assets/styles/themes/light-theme.css"> -->
+    <script src="assets/libs/jquery-3.5.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="appWindow">
+        <div id="appTopbar">
+            <div class="appTopbar__grabArea" style="width: 100%; height: 2px;"></div>
+            <div class="appTopbar__grabArea" style="height: 70px; width: 2px; left: 0;"></div>
+            <div class="appTopbar__grabArea" style="height: 70px; width: 2px; right: 0;"></div>
+            <div id="appTopbar__sectionLogo">
+                <img id="appTopbar__Logo" src="assets/cdn/media/logoTextBlue.png">
+            </div>
+            <div id="appTopbar__sectionNav">
+                <img>
+                <p>Title</p>
+                <p>Title</p>
+                <p>Title</p>
+                <img>
+            </div>
+            <div id="appTopbar__sectionAccount">
+                <img>
+                <img>
+                <img>
+                <p>Name</p>
+            </div>
+        </div>
+        <div id="appBackground">
+            <div id="appBackground__vignette"></div>
+            <!-- <div id="appBackground__image" style="background-image: url(assets/cdn/games/dota2.jpg);"></div> -->
+            <div id="appBackground__image" style="background-image: url(assets/cdn/games/ark.jpg);"></div>
+            <!-- <div id="appBackground__image" style="background-image: url(assets/cdn/games/rocket-league.jpg);"></div> -->
+        </div>
+        <div class="pepernoot">
+            <div id="appBackground__gameInformation">
+                <p id="appTitle">Rocket League</p>
+            </div>
+            <div id="library__grid">
+                <div class="library__gridItem" id="game" style="background-image: url(assets/cdn/games/ARK\ Survival\ Evolved.png)">
+                    <video id="vid" src="assets/cdn/games/ark-trailer.mp4" width="100%" autoplay muted></video>
+                    <style>
+                        #vid {
+                            display: none;
+                        }
+
+                        #game:hover + #vid {
+                            display: block;
+                        }
+                    </style>
+                </div>
+                <div class="library__gridItem" style="background-image: url(assets/cdn/games/Battlefield\ V.png)"></div>
+                <div class="library__gridItem" style="background-image: url(assets/cdn/games/ARK\ Survival\ Evolved.png)"></div>
+                <div class="library__gridItem" style="background-image: url(assets/cdn/games/rocket-league-cover.jpeg)"></div>
+                <div class="library__gridItem" style="background-image: url(assets/cdn/games/ARK\ Survival\ Evolved.png)"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+                <div class="library__gridItem blank"></div>
+            </div>
+        </div>
+    </div>
+    <!-- High Priority Scripts -->
+    <script src="assets/libs/jquery-3.5.1.min.js"></script>
+    <script src="assets/scripts/windowcontrols.js"></script>
+    <script src="assets/scripts/notification.js"></script>
+    <!-- Other -->
+    <script src="assets/scripts/volumeslider.js"></script>
+    <script src="assets/scripts/settings.js"></script>
+    <script src="assets/scripts/musicbar.js"></script>
+    <!-- Settings -->
+    <script src="assets/scripts/getsysinf.js"></script>
+    <script src="assets/scripts/setsysinf.js"></script>
+</body>
+
+</html>
